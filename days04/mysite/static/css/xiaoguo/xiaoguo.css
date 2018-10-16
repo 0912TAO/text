@@ -1,0 +1,23 @@
+.text-popup {
+				animation: textPopup 3s;
+				color: red;
+				user-select: none;
+				white-space: nowrap;
+				position: absolute;
+				z-index: 99;
+				font-size: 15px;
+				font-family: "方正舒体";
+			}
+			
+			@keyframes textPopup {
+				0%,
+				100% {
+					opacity: 0;
+				}
+				5% {
+					opacity: 1;
+				}
+				100% {
+					transform: translateY(-50px);
+				}
+			}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人信息</title>
+    <link rel="stylesheet" href="/static/js/lib/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="/static/js/lib/jquery2.2.4/jquery-2.2.4.min.js"></script>
+    <script src="/static/js/lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="/static/js/lib/xiaoguojs/xiaoguoq.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/xiaoguo/xiaoguo.css" />
+    <link rel="stylesheet" href="/static/css/index.css" />
+</head>
+<body>
+    <div class="panel-heading">查询用户信息--{{article.nickname}}</div>
+      <div class="panel-body">
+
+        <table class="table table-bordered table-hover table-striped">
+          <thead>
+            <tr>
+                <td colspan="2">用户信息---{{article.nickname}}</td>
+            </tr>
+          </thead>
+          <tbody>
+                <tr>
+                    <td>用户名称：</td>
+                    <td>{{article.username}}</td>
+                </tr>
+                <tr>
+                    <td>用户昵称：</td>
+                    <td>{{article.nickname}}</td>
+                </tr>
+                <tr>
+                    <td>用户年龄：</td>
+                    <td>{{article.age}}</td>
+                </tr>
+                <tr>
+                    <td>用户性别：</td>
+                     {% ifequal article.gender 1 %}
+                     <td style="text-align: center;">男</td>
+                        {% else %}
+                        <td style="text-align: center;">女</td>
+                     {% endifequal %}
+                </tr>
+                <tr>
+                    <td>用户邮箱：</td>
+                    <td>{{article.email}}</td>
+                </tr>
+          </tbody>
+      </table>
+
+      </div>
+    </div>
+</body>
+</html>

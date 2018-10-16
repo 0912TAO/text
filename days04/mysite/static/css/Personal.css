@@ -1,0 +1,163 @@
+.herd-xp {
+	width: 40px;
+	height: 40px;
+	margin-top: 5px;
+}
+
+body {
+	padding: 74px;
+}
+
+.hepl-tab {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.help-h {
+	width: 936px;
+	height: 418px;
+}
+
+.hepl-h>h3 {
+	padding-left: 10px;
+	font-weight: bolder;
+	line-height: 90px;
+	height: 90px;
+	border-bottom: solid 1px;
+	font-size: 20px;
+	color: #3d3d3d;
+	height: 90px;
+	line-height: 90px;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.user_info {
+	height: 418px;
+}
+
+.user-img {
+	float: left;
+	text-align: center;
+	margin-right: 16px;
+	cursor: pointer;
+}
+
+.head {
+	float: left;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	/*margin: 0 auto;*/
+	margin-top: 16px;
+	margin-left: 20px;
+}
+
+.modify {
+	font-size: 14px;
+	color: #3399ea;
+	margin-top: 8px;
+	margin-left: 20px;
+	cursor: pointer;
+}
+
+.right_info {
+	margin-top: 16px;
+	overflow: hidden;
+}
+
+.id_card {
+	height: 20px;
+	line-height: 20px;
+}
+
+.id_name {
+	/*float: left;*/
+	font-size: 14px;
+	color: #999;
+	margin-right: 16px;
+}
+
+.user_home {
+	/*float: right;*/
+	font-size: 14px;
+	color: #3399ea;
+	padding-right: 9.3px;
+}
+
+.csdn_info {
+	
+	margin-left: 130px;
+	margin-top: 8px;
+	margin-bottom: 16px;
+	border-bottom: solid 1px #e0e0e0;
+	font-size: 20px;
+}
+
+.nick {
+	/*display: block;*/
+	height: 32px;
+	line-height: 32px;
+	overflow: hidden;
+}
+
+.mod {
+	/*float: right;*/
+	font-size: 14px;
+	color: #3399ea;
+	cursor: pointer;
+	margin-left: 20px;
+}
+
+.self {
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	margin: 0;
+	padding: 0;
+}
+
+.self>ul {
+	float: left;
+	margin-left: -40px;
+}
+
+.comon {
+	height: 32px;
+	line-height: 32px;
+	font-size: 14px;
+	color: #4d4d4d;
+	list-style: none;
+}
+
+.panel>li {
+	display: block;
+	list-style: none;
+}
+
+.panel>li>a {
+	display: block;
+	text-decoration: none;
+}
+
+.panel-ul {
+	border: solid 1px #888;
+	text-align: center;
+	margin-bottom: 0px;
+	width: 160px;
+	margin-left: 20px;
+	/*float: right;*/
+	
+}
+.panel-li{
+	height: 40px;
+	text-align: center;
+	line-height: 30px;
+}
+.panel-ul .panel-li>a:hover {
+	background-color: red;
+	width: 160px;
+	margin-left: -42px;
+	height: 30px;
+	color: white;
+	
+}

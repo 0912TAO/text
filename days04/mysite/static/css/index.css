@@ -1,0 +1,34 @@
+.help-navbar-right {
+	margin-right: 180px;
+}
+
+.new-col-md-5 {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.new-col-md-3 {
+	padding-left: 0px;
+	padding-right: 0px;
+	margin-bottom: 0px;
+}
+
+.help-panel {
+	border: none;
+}
+
+.hot-author img {
+	width: 60px;
+	height: 60px;
+	border: solid 1px #ddd;
+	margin-right: 18px;
+}
+.help-img img{
+	width: 60px;
+	height: 60px;
+}
+.bozhu-xinxi{
+	margin-left:50%;
+}
+
+

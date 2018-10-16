@@ -1,0 +1,23 @@
+body{
+	padding: 74px;
+}
+.help-img img{
+	width: 90px;
+	height: 90px;
+}
+.help-panel {
+	border: none;
+}
+.text-my{
+    margin-left:45px;
+
+}
+.media-body ul{
+	margin-bottom: 10px;
+	margin-top: 20px;
+}
+.text-muted>img{
+	width: 16px;
+	height: 16px;
+
+}

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>博客首页</title>
+    <link rel="stylesheet" href="/static/js/lib/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <script src="/static/js/lib/jquery2.2.4/jquery-2.2.4.min.js"></script>
+    <script src="/static/js/lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="/static/js/lib/xiaoguojs/xiaoguoq.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/xiaoguo/xiaoguo.css" />
+    <link rel="stylesheet" href="/static/css/index.css" />
+</head>
+<body>
+		<!--
+        	作者：tom_tao0912@163.com
+        	时间：2018-09-18
+        	描述：顶部样式导航
+        -->
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+					<ul class="nav navbar-nav  navbar-left">
+
+						<li>
+							<a href="#">Home</a>
+						</li>
+						<li>
+							<a href="#">关于我们</a>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav help-navbar-right navbar-right">
+						{% if request.session.loginArticle %}
+						<li>
+							<a data-toggle="modal" href="#">
+								{{ request.session.loginArticle.nickname }}
+							</a>
+						</li>
+						<li>
+							<a data-toggle="modal"  href="{% url 'blog:logout' %}">退出</a>
+						</li>
+						{% else %}
+						<li>
+							<a data-toggle="modal" data-target="#denglu" href="#">登录</a>
+						</li>
+						<li>
+							<a data-toggle="modal" data-target="#myModal" href="">注册</a>
+						</li>
+						{% endif %}
+					</ul>
+
+				</div>
+			</div>
+		</nav>
+		<!--
+	作者：tom_tao0912@163.com
+	时间：2018-09-18
+	描述：滚动图片
+-->
+		<div class="col-md-14">
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+				</ol>
+
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner" role="listbox">
+					<div class="item active">
+						<img src="/static/img/index/12.jpg" alt="...">
+						<div class="carousel-caption">
+							...
+						</div>
+					</div>
+					<div class="item">
+						<img src="/static/img/index/13.jpg" alt="...">
+						<div class="carousel-caption">
+							...
+						</div>
+					</div>
+					<div class="item">
+						<img src="/static/img/index/14.jpg" alt="...">
+						<div class="carousel-caption">
+							...
+						</div>
+					</div>
+				</div>
+
+				<!-- Controls -->
+				<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+					<span class="sr-only">上一张</span>
+				</a>
+				<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+					<span class="sr-only">下一张</span>
+				</a>
+			</div>
+		</div>
+		<!--
+    	作者：tom_tao0912@163.com
+    	时间：2018-09-18
+    	描述：导航条
+   -->
+		<nav class="navbar navbar-default ">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+					<a class="navbar-brand" href="#">M站</a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a href="./index.html" class="glyphicon glyphicon-home" /> 首页 <span class="sr-only">(current)</span></a>
+						</li>
+						<li>
+							<a href="./main.html" class="glyphicon glyphicon-user"> 个人主页</a>
+						</li>
+						<li>
+							<a href="./article.html" class="glyphicon glyphicon-pencil"> 心情随笔</a>
+						</li>
+						<li>
+							<a href="#" class="glyphicon glyphicon-dashboard"> 韶华追忆</a>
+						</li>
+						<li>
+							<a href="#" class="glyphicon glyphicon-new-window"> 技术分享</a>
+						</li>
+						<li>
+							<a href="#" class="glyphicon glyphicon-credit-card"> 个人归档</a>
+						</li>
+						<li>
+							<a href="#" class="glyphicon glyphicon-edit"> Blog留言</a>
+						</li>
+						<li>
+							<a href="./Personal.html" class="glyphicon glyphicon-headphones"> 关于我</a>
+						</li>
+						<!--<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#">Action</a>
+								</li>
+								<li>
+									<a href="#">Another action</a>
+								</li>
+								<li>
+									<a href="#">Something else here</a>
+								</li>
+								<li role="separator" class="divider"></li>
+								<li>
+									<a href="#">Separated link</a>
+								</li>
+								<li role="separator" class="divider"></li>
+								<li>
+									<a href="#">One more separated link</a>
+								</li>
+							</ul>
+						</li>-->
+					</ul>
+					<form class="navbar-form navbar-right">
+						<div class="form-group">
+							<input type="text" class="form-control " placeholder="请输入您想搜索的内容">
+						</div>
+						<button type="submit" class="btn btn-default">搜索</button>
+					</form>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container-fluid -->
+		</nav>
+		<!--
+        	作者：tom_tao0912@163.com
+        	时间：2018-09-18
+        	描述：轮廓
+        -->
+		<div class="container">
+			<div class="row">
+				<!--
+                	作者：tom_tao0912@163.com
+                	时间：2018-09-18
+                	描述：信息
+                -->
+				<div class="col-md-2">
+					<div class="panel panel-default">
+						<div class="panel-heading">推荐文章</div>
+						<ul class="list-group">
+							<li class="list-group-item text-center">
+								<a href="#">最新文章</a>
+							</li>
+							<li class="list-group-item text-center">
+								<a href="#">关注</a>
+							</li>
+							<li class="list-group-item text-center">
+								<a href="#">咨询</a>
+							</li>
+							<li class="list-group-item text-center">
+								<a href="#">人工智能</a>
+							</li>
+							<li class="list-group-item text-center">
+								<a href="#">云计算/大数据</a>
+							</li>
+							<li class="list-group-item text-center">
+								<a href="#">最新文章</a>
+							</li>
+							<li class="list-group-item text-center">
+								<a href="#">关注</a>
+							</li>
+							<li class="list-group-item text-center">
+								<a href="#">咨询</a>
+							</li>
+							<li class="list-group-item text-center">
+								<a href="#">人工智能</a>
+							</li>
+							<li class="list-group-item text-center">
+								<a href="#">云计算/大数据</a>
+							</li>
+							<li class="list-group-item text-center">
+								<a href="#">最新文章</a>
+							</li>
+							<li class="list-group-item text-center">
+								<a href="#">关注</a>
+							</li>
+							<li class="list-group-item text-center">
+								<a href="#">咨询</a>
+							</li>
+							<li class="list-group-item text-center">
+								<a href="#">人工智能</a>
+							</li>
+							<li class="list-group-item text-center">
+								<a href="#">云计算/大数据</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!--
+        	作者：tom_tao0912@163.com
+        	时间：2018-09-18
+        	描述：轮播图片
+        -->
+				<div class="col-md-8 new-col-md-5">
+					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+						<!-- Indicators -->
+						<ol class="carousel-indicators">
+							<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="3"></li>
+						</ol>
+
+						<!-- Wrapper for slides -->
+						<div class="carousel-inner" role="listbox">
+							<div class="item active">
+								<img src="/static/img/index/1q.jpg" alt="...">
+								<!--<div class="carousel-caption">
+									...
+								</div>-->
+							</div>
+							<div class="item">
+								<img src="/static/img/index/2q.jpeg" alt="...">
+								<div class="carousel-caption">
+									...
+								</div>
+							</div>
+							<div class="item">
+								<img src="/static/img/index/3q.jpg" alt="...">
+								<!--<div class="carousel-caption">
+									...
+								</div>-->
+							</div>
+							<div class="item">
+								<img src="/static/img/index/4q.jpg" alt="...">
+								<!--<div class="carousel-caption">
+									...
+								</div>-->
+							</div>
+						</div>
+					</div>
+
+					<div class="panel panel-default">
+						<div class="panel-heading">热门文章</div>
+						<ul class="list-group">
+							<li class="list-group-item">
+								<a href="#"><i class="label label-danger">原创</i>习近平为长江生态画“红线”</a><i class="badge">2000</i></li>
+							<li class="list-group-item">
+								<a href="#"><i class="label label-danger">原创</i>习近平为长江生态画“红线”</a><i class="badge">2000</i></li>
+							<li class="list-group-item">
+								<a href="#"><i class="label label-success">转载</i>从日本到瑞典 中国外交官不该被键盘侠们一再误解</a><i class="badge">45456</i></li>
+							<li class="list-group-item">
+								<a href="#"><i class="label label-success">转载</i>沈阳两起间谍案曝光:台湾间谍色诱利诱沈阳研究生</a><i class="badge">2000</i></li>
+							<li class="list-group-item">
+								<a href="#"><i class="label label-warning">翻译</i>草莓里藏针 洪水中现海豚</a><i class="badge">234</i></li>
+							<li class="list-group-item">
+								<a href="#"><i class="label label-warning">翻译</i>“山竹”逼近 广东多地辟谣“让学生返校”</a><i class="badge">2342</i></li>
+							<li class="list-group-item">
+								<a href="#"><i class="label label-danger">原创</i>习近平为长江生态画“红线”</a><i class="badge">2000</i></li>
+							<li class="list-group-item">
+								<a href="#"><i class="label label-danger">原创</i>习近平为长江生态画“红线”</a><i class="badge">2000</i></li>
+							<li class="list-group-item">
+								<a href="#"><i class="label label-success">转载</i>央视快评：弘扬科学精神 增强公众科学素质</a><i class="badge">45434</i></li>
+							<li class="list-group-item">
+								<a href="#"><i class="label label-success">转载</i>从日本到瑞典 中国外交官不该被键盘侠们一再误解</a><i class="badge">45456</i></li>
+							<li class="list-group-item">
+								<a href="#"><i class="label label-success">转载</i>沈阳两起间谍案曝光:台湾间谍色诱利诱沈阳研究生</a><i class="badge">2000</i></li>
+							<li class="list-group-item">
+								<a href="#"><i class="label label-warning">翻译</i>人民日报评论员：坚持党对教育事业的全面领导</a><i class="badge">34534</i></li>
+							<li class="list-group-item">
+								<a href="#"><i class="label label-warning">翻译</i>草莓里藏针 洪水中现海豚</a><i class="badge">234</i></li>
+							<li class="list-group-item">
+								<a href="#"><i class="label label-warning">翻译</i>iPhone仍有被禁风险</a><i class="badge">12</i></li>
+							<li class="list-group-item">
+								<a href="#"><i class="label label-danger">原创</i>习近平为长江生态画“红线”</a><i class="badge">2000</i></li>
+							<li class="list-group-item">
+								<a href="#"><i class="label label-danger">原创</i>习近平为长江生态画“红线”</a><i class="badge">2000</i></li>
+							<li class="list-group-item">
+								<a href="#"><i class="label label-danger">原创</i>习近平为长江生态画“红线”</a><i class="badge">2000</i></li>
+							<li class="list-group-item">
+								<a href="#"><i class="label label-danger">原创</i>习近平为长江生态画“红线”</a><i class="badge">2000</i></li>
+							<li class="list-group-item">
+								<a href="#"><i class="label label-success">转载</i>央视快评：弘扬科学精神 增强公众科学素质</a><i class="badge">45434</i></li>
+							<li class="list-group-item">
+								<a href="#"><i class="label label-success">转载</i>从日本到瑞典 中国外交官不该被键盘侠们一再误解</a><i class="badge">45456</i></li>
+							<li class="list-group-item">
+								<a href="#"><i class="label label-warning">翻译</i>草莓里藏针 洪水中现海豚</a><i class="badge">234</i></li>
+							<li class="list-group-item">
+								<a href="#"><i class="label label-danger">原创</i>习近平为长江生态画“红线”</a><i class="badge">2000</i></li>
+							<li class="list-group-item">
+								<a href="#"><i class="label label-success">转载</i>央视快评：弘扬科学精神 增强公众科学素质</a><i class="badge">45434</i></li>
+							<li class="list-group-item">
+								<a href="#"><i class="label label-success">转载</i>从日本到瑞典 中国外交官不该被键盘侠们一再误解</a><i class="badge">45456</i></li>
+							<li class="list-group-item">
+								<a href="#"><i class="label label-success">转载</i>沈阳两起间谍案曝光:台湾间谍色诱利诱沈阳研究生</a><i class="badge">2000</i></li>
+							<li class="list-group-item">
+								<a href="#"><i class="label label-warning">翻译</i>iPhone仍有被禁风险</a><i class="badge">12</i></li>
+						</ul>
+					</div>
+				</div>
+
+				<!--
+                	作者：tom_tao0912@163.com
+                	时间：2018-09-18
+                	描述：信息
+            -->
+				<div class="col-md-2">
+					<div class="panel panel-default">
+						<div class="panel-heading">今日推荐</div>
+						<ul class="list-group">
+							<li class="list-group-item text-center">
+								<a href="#">最新文章</a>
+							</li>
+							<li class="list-group-item text-center">
+								<a href="#">关注</a>
+							</li>
+							<li class="list-group-item text-center">
+								<a href="#">咨询</a>
+							</li>
+							<li class="list-group-item text-center">
+								<a href="#">人工智能</a>
+							</li>
+							<li class="list-group-item text-center">
+								<a href="#">云计算/大数据</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		</div>
+
+		</div>
+		<!--
+	作者：tom_tao0912@163.com
+	时间：2018-09-19
+	描述：注册
+-->
+		<!-- Button trigger modal -->
+		<!--<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>-->
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="myModalLabel">注册面板</h4>
+
+
+					</div>
+					<div class="modal-body row">
+						<div class="col-md-6">
+
+								<div class="col-xs-6 col-md-12">
+									<a href="#" class="thumbnail">
+										<img src="/static/img/index/2q.jpeg" alt="...">
+									</a>
+								</div>
+						</div>
+					<form  action="/blog/index/" method="post">
+                        {{msg}}
+						<div class="col-md-6 ">
+
+
+								{% csrf_token %}
+								<div class="">
+								<label>输入昵称：</label>
+								<input type="text" class="form-control zc-ys" name="nickname" aria-label="...">
+							</div>
+							<div class="">
+								<label>输入用户名：</label>
+								<input type="text" class="form-control zc-ys" name="username" aria-label="...">
+							</div>
+							<div class="">
+								<label>输入密码：</label>
+								<input type="password" class="form-control zc-ys" name="password" aria-label="...">
+							</div>
+							<div class="">
+								<label>确认密码：</label>
+								<input type="password" class="form-control zc-ys" name="querpassword" aria-label="...">
+							</div>
+						</div>
+
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+						<button type="submit" class="btn btn-primary"  >完成注册</button>
+                        <!--<button type="submit" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">点我弹出/隐藏弹出框</button>-->
+					</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!--
+        	作者：tom_tao0912@163.com
+        	时间：2018-09-19
+        	描述：登录
+        -->
+		<!-- Button trigger modal -->
+		<!--<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>-->
+
+		<!-- Modal -->
+		<div class="modal fade" id="denglu" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="ModalLabel">登录面板</h4>
+					</div>
+					<div class="modal-body row">
+						<div class="col-md-6">
+
+								<div class="col-xs-6 col-md-12">
+									<a href="#" class="thumbnail">
+										<img src="/static/img/index/2q.jpeg" alt="...">
+									</a>
+								</div>
+						</div>
+						<form  action="/blog/login/" method="post">
+                        {{msg1}}
+						<div class="col-md-6 ">
+							<div class="">
+								{% csrf_token %}
+								<label>用户名：</label>
+								<input type="text" class="form-control zc-ys"  name="loginname" aria-label="" placeholder="用户名/手机号/账号/邮箱">
+							</div>
+							<div class="">
+								<label>密码：</label>
+								<input type="password" class="form-control zc-ys" name="loginpassword" aria-label="...">
+							</div>
+						</div>
+						</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+								<button type="submit" class="btn btn-primary" >登录</button>
+							</div>
+					</form>
+						</div>
+
+			</div>
+		</div>
+        <script>
+            $(function(){
+                <!--鼠标点击事件-->
+                $("#zhuce").mousedown(function() {
+
+				});
+
+            })
+
+        </script>
+	</body>
+</html>
